@@ -20,15 +20,28 @@ public class CustomerManager {
     @PersistenceContext(unitName = "customerPU")
     private EntityManager em;
 
+    /**
+     * get All customers 
+     * @return 
+     */
     public List<Customer> getAllCustomers() {
        Query query = em.createNamedQuery("Customer.findAll");
        return query.getResultList();
     }
 
+    /**
+     * update customer 
+     * @param customer
+     * @return 
+     */
     public Customer update(Customer customer) {
        return em.merge(customer);
     }
 
+    /**
+     * persist customer
+     * @param customer 
+     */
     public void persist(Customer customer) {
        em.persist(customer);
     } 

@@ -12,7 +12,7 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form>
+        <h:form rendered='#{customerDetailsBean.customer != null}'>
             <h1><h:outputText value="Create/Edit"/></h1>
             <h:panelGrid columns="2">
                 <h:outputLabel value="CustomerId:" for="customerId" />
@@ -51,5 +51,6 @@
                 <h:messages/>
             </h:panelGrid>
         </h:form>
+        <h:outputText value="Aucun client avec l'id #{customerDetailsBean.idCustomer} !" rendered='#{customerDetailsBean.customer == null}'/>
     </h:body>
 </html>

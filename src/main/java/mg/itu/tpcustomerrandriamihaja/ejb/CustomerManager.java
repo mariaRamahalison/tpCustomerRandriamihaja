@@ -46,6 +46,9 @@ public class CustomerManager {
        em.persist(customer);
     } 
 
+    public Customer findById(int idCustomer) {  
+        return em.find(Customer.class, idCustomer);
+    }
     
     
 }
